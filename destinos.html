@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem Compartilhada</title>
+
+    <link rel="stylesheet" href="styles/style_destinos.css">
+
+    <link rel="shortcut icon" href="imagens/logo_png.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="lado-a-lado">
+            <img src="imagens/logo_png.png" alt="Logo Viagem Compartilhada">
+            <h1>Viagem Compartilhada</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Minhas Viagens</a></li>
+                <li><a href="#">Destinos</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="continentes">
+            <h2>Escolha uma Localização</h2>
+            
+            <button class="botao-continente" onclick="trocarContinente('africa')">
+                África
+            </button>
+
+            <button class="botao-continente" onclick="trocarContinente('america')">
+                América 
+            </button>
+
+            <button class="botao-continente" onclick="trocarContinente('asia')">
+                Ásia
+            </button>
+
+            <button class="botao-continente" onclick="trocarContinente('europa')">
+                Europa
+            </button>
+
+            <button class="botao-continente" onclick="trocarContinente('oceania')">
+                Oceania
+            </button>
+        </div>
+
+        <div class="container">
+            <div class="cards">
+                <button class="favoritar" onclick="favoritarDestino()">
+                    <img id="coracao" src="imagens/coracao_vazio.png" alt="Ícone Favoritar">
+                </button>
+
+                <i><h2 class="nome"></h2></i>
+                <img class="img">
+                <p class="descricao"></p>
+                
+                <p class="texto-esquerda">
+                    <strong>Localização:</strong>
+                    <span class="localizacao"></span>
+                </p>
+
+                <p class="texto-esquerda">
+                    <strong>Idioma:</strong>
+                    <span class="idioma"></span>
+                </p>
+
+                <p class="texto-esquerda">
+                    <strong>Culinária:</strong>
+                    <span class="culinaria"></span>
+                </p>
+
+                <a class="botao saibamais" target="_blank"> 
+                    Saiba Mais
+                    <img src="imagens/mais.png" alt="Ícone +">
+                </a>
+            </div>
+
+            <div class="lado-a-lado">
+                <button class="botao anterior">
+                    <img src="imagens/anterior.png" alt="Ícone anterior">
+                    Voltar
+                </button>
+
+                <button class="botao proximo">
+                    Próximo
+                    <img src="imagens/proximo.png" alt="Ícone próximo">
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/destinos.js"></script>
+</body>
+</html>

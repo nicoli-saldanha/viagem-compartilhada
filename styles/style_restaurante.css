@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 16px;
+    background-color: #e2d4f0;
+    border-bottom: 1px solid #2d035c;
+}
+
+header h1 {
+    color: #2d035c;
+}
+
+header div {
+    justify-self: center;
+}
+
+.lado-a-lado {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.lado-a-lado img {
+    width: 60px;
+    height: auto;
+}
+
+nav {
+    justify-self:center;
+}
+
+nav ul {
+    display: flex;
+    gap: 45px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 19px;
+    color: #4b0c92;
+    font-weight: 550;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    color: #6a16ca;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: #f1f1f1;
+    margin: 20px auto;
+    padding: 15px;
+    width: 700px;
+    height: 63vh;
+    border-radius: 8px;
+    border: 2px solid #4b0c92;
+    position: relative;
+}
+
+h1 {
+    font-size: 35px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+h2 {
+    color: black;
+    padding: 5px 0px 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+label {
+    color: #4f4e4e;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+input, select {
+    display: block;
+    font-size: 14px;
+    margin: 5px auto;
+    padding: 5px;
+    width: 80%;
+    font-family: inherit;
+    border-radius: 5px;
+    border: 1px solid #4b0c92;
+    text-align: left;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo input {
+    margin-left: 65px;
+    margin-right: 15px;
+    width: 400px;
+}
+
+.linha {
+    display: flex;
+    gap: 13px;
+}
+
+.botao {
+    display: flex;          
+    align-items: center; 
+    justify-content: center; 
+    justify-self: center;
+    gap: 15px;   
+    width: 190px;
+    height: 50px;
+    background-color: rebeccapurple;
+    border: 2px solid rgb(64, 34, 94);
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 200px;  
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: rgb(130, 62, 198);
+    transform: scale(1.05);
+}
+
+.recarregar {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.recarregar img {
+    width: 30px;
+    height: 30px;
+}
+
+.fases {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8d4ff;
+    width: 35px;
+    height: 35px;
+    color: blueviolet;
+    font-size: 18px;
+    font-weight: 550;
+    border-radius: 50%;
+    border: 1px solid #4f4e4e;
+}
+
+.ciclo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0px 15px;
+}
+
+#atual {
+    background-color: #6a16ca;
+    transform: scale(1.15);
+    color: white;
+}
+
+#nota1, #nota2, #nota3, #nota4 {
+    text-align: center;
+    width: 80px;
+    color: #6a16ca;
+    font-weight: 600;
+}

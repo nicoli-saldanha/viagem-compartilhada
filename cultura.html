@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem Compartilhada</title>
+
+    <link rel="stylesheet" href="styles/style_cultura.css">
+
+    <link rel="shortcut icon" href="imagens/logo_png.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="lado-a-lado">
+            <img src="imagens/logo_png.png" alt="Logo Viagem Compartilhada">
+            <h1>Viagem Compartilhada</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Minhas Viagens</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="ciclo">
+            <div class="fases">
+                <p>1</p>
+            </div>
+
+            <div class="fases">
+                <p>2</p>
+            </div>
+
+            <div class="fases">
+                <p>3</p>
+            </div>
+
+            <div class="fases" id="atual">
+                <p>4</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <button class="recarregar" onclick="location.reload()">
+                <img src="imagens/reiniciar.png" alt="Recarregar">
+            </button>
+
+            <h2>Nova Viagem - Cultura</h2>
+
+            <form action="/finalizar" method="POST">
+                <div class="campo">
+                    <label>Curiosidades Culturais:</label>
+                    <input type="text" id="curiosidade" name="curiosidade" placeholder="Ex: Pedir café após as refeições é algo mal visto pelos locais" required>
+                </div><br>
+
+                <div class="campo">
+                    <label>Aspecto Cultural Surpreendente:</label>
+                    <input type="text" id="surpreendente" name="surpreendente" placeholder="Opcional">
+                </div><br>
+
+                <div class="campo">
+                    <label>Aspecto Cultural que Mais Gostou:</label>
+                    <input type="text" id="favorito" name="favorito" placeholder="Opcional">
+                </div>
+
+                <button type="submit" class="botao">Finalizar</button>
+        </div>
+
+        <script src="scripts/index.js"></script>
+    </main>
+</body>
+
+</html>

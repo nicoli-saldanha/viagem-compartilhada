@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 16px;
+    background-color: #e2d4f0;
+    border-bottom: 1px solid #2d035c;
+}
+
+header h1 {
+    color: #2d035c;
+}
+
+header div {
+    justify-self: center;
+}
+
+.lado-a-lado {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.lado-a-lado img {
+    width: 60px;
+    height: auto;
+}
+
+nav {
+    justify-self:center;
+}
+
+nav ul {
+    display: flex;
+    gap: 45px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 19px;
+    color: #4b0c92;
+    font-weight: 550;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    color: #6a16ca;
+}
+
+.continentes{
+    text-align: center;
+    margin: 30px;
+}
+
+.continentes h2 {
+    padding: 10px 10px;
+}
+
+.continentes button{
+    padding: 12px 25px;
+    font-size: 15px;
+    margin: 8px;
+    width: 120px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: #6a16ca;
+    color: white;
+}
+
+.continentes button:hover {
+    background-color: #8f4dda;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cards {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 20px;
+    border: 2px solid #4b0c92;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    position: relative;
+}
+
+.nome {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.cards h2 {
+    padding: 8px;
+}
+
+.cards p {
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 18px;
+    width: 92%;
+}
+
+.cards img {
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.img {
+    border: 2px solid black;
+    margin: 2px 0 15px;
+}
+
+.lado-a-lado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.favoritar {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border: none; 
+    cursor: pointer;
+}
+
+#coracao {
+    width: 35px;  
+    height: auto; 
+}
+
+.favoritar:hover {
+    transform: scale(1.1); 
+}
+
+.botao {
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;  
+    padding: 10px 15px;
+    width: 145px;
+    margin: 10px 15px 25px;
+    background-color: rebeccapurple;
+    border-radius: 30px;
+    border: 2px solid rgb(64, 34, 94);
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.saibamais {
+    margin: 20px 5px 10px;
+    display: flex;
+}
+
+.botao img{
+    width: auto;
+    height: 30px;
+}
+
+.botao:hover {
+    background-color: rgb(130, 62, 198);
+    transform: scale(1.05);
+}
+
+.texto-esquerda {
+    text-align: left;
+}
