@@ -16,17 +16,19 @@ app.use(session({
 }));
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '12345',
-    database: 'banco_viagens'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '12345',
+    database: process.env.DB_NAME || 'banco_viagens',
+    port: process.env.DB_PORT || 3306,
+    ssl: process.env.DB_HOST ? { rejectUnauthorized: false } : null
 });
 
 db.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco:', err);
     } else {
-        console.log('Conectado ao MySQL (banco_viagens)');
+        console.log('Conectado ao MySQL!');
     }
 });
 
