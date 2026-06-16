@@ -1,8 +1,22 @@
 async function carregarViagens() {
-    const resposta = await fetch('/viagens');
-    const viagens = await resposta.json();
-
     const container = document.getElementById('listaViagens');
+
+    if(!container) return;
+
+    let viagens = [];
+
+    try {
+        const resposta = await fetch('/viagens');
+
+        if (resposta.ok) {
+            viagens = await resposta.json();
+        } else {
+            console.error("Erro no servidor ao buscar viagens.");
+            }
+    } catch (erro) {
+        console.error("Servidor fora do ar ou erro de conexão: ", erro);
+    }
+
     container.innerHTML = ''; 
 
     if (viagens.length === 0) {
@@ -80,12 +94,10 @@ async function buscarBandeira(pais, idCard) {
             }
         }
     } catch (erro) {
-        // Captura o erro silenciosamente para não quebrar a página caso o país realmente não exista
         console.log(`Bandeira não encontrada para: ${pais}`);
     }
 }
 
-// Função para deletar a viagem
 async function excluirViagem(id) {
     const confirmar = confirm('Deseja excluir esta viagem?');
 
@@ -100,5 +112,4 @@ async function excluirViagem(id) {
     carregarViagens();
 }
 
-// Inicia o carregamento assim que a página abre
 carregarViagens();
