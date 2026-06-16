@@ -11,12 +11,11 @@ Uma aplicação web para registro de experiências em viagem. O projeto permite 
 - MySQL
 - Express Session
 - Pexels API
----
 
 ---
 ## API Utilizada
 ### Pexels API
-Utilizada para obter imagens dos destinos cadastrados.
-Documentação: https://www.pexels.com/api/
+Empregada para obter imagens dos destinos cadastrados.
+Documentação: https://www.pexels.com/api/.
 
 ---
