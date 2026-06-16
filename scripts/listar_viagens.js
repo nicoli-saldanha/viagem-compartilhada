@@ -12,7 +12,7 @@ async function carregarViagens() {
             viagens = await resposta.json();
         } else {
             console.error("Erro no servidor ao buscar viagens.");
-            }
+        }
     } catch (erro) {
         console.error("Servidor fora do ar ou erro de conexão: ", erro);
     }
@@ -85,7 +85,9 @@ async function buscarBandeira(pais, idCard) {
         
         if (resposta.ok) {
             const dados = await resposta.json();
+            
             const linkDaBandeira = dados[0].flags.svg; 
+            
             const imagemElemento = document.getElementById(`bandeira-${idCard}`);
             
             if (imagemElemento) {
