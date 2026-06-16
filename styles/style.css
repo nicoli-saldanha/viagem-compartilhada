@@ -112,7 +112,7 @@ main h1 {
 .card-viagem h3 {
     color: #6a16ca;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .card-viagem p {
@@ -125,7 +125,7 @@ main h1 {
 .cabecalho-card {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
 }
 
