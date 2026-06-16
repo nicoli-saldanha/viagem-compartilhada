@@ -33,9 +33,14 @@ async function carregarViagens() {
         const nomePais = viagem.local_visitado.split(',')[0].trim();
 
         let htmlCard = `
-            <div class="pais-bandeira">
-                <h3> ${viagem.local_visitado}</h3>
-                <img id="bandeira-${viagem.id}" src="" alt="Bandeira" class="bandeira">
+            <div class="cabecalho-card">
+                <h3>${viagem.local_visitado}</h3>
+                <img
+                    id="imagem-${viagem.id}"
+                    class="foto-pais"
+                    src=""
+                    alt="Destino"
+                >
             </div>
             
             <p><strong> Período:</strong> ${dataInicio} a ${dataFinal}</p>
@@ -71,32 +76,41 @@ async function carregarViagens() {
         card.innerHTML = htmlCard;
         container.appendChild(card);
 
-        buscarBandeira(nomePais, viagem.id);
+        buscarImagem(nomePais, viagem.id);
     });
 }
 
-async function buscarBandeira(pais, idCard) {
+async function buscarImagem(pais, idCard) {
+
     try {
-        let resposta = await fetch(`https://restcountries.com/v3.1/translation/${pais}`);
-        
-        if (!resposta.ok) {
-            resposta = await fetch(`https://restcountries.com/v3.1/name/${pais}`);
+
+        const resposta = await fetch(
+            `/imagem/${encodeURIComponent(pais)}`
+        );
+
+        const dados = await resposta.json();
+
+        if (!dados.photos || dados.photos.length === 0) {
+            return;
         }
-        
-        if (resposta.ok) {
-            const dados = await resposta.json();
-            
-            const linkDaBandeira = dados[0].flags.svg; 
-            
-            const imagemElemento = document.getElementById(`bandeira-${idCard}`);
-            
-            if (imagemElemento) {
-                imagemElemento.src = linkDaBandeira;
-                imagemElemento.style.display = 'block'; 
-            }
+
+        const urlImagem = dados.photos[0].src.medium;
+
+        const imagem = document.getElementById(
+            `imagem-${idCard}`
+        );
+
+        if (imagem) {
+            imagem.src = urlImagem;
         }
+
     } catch (erro) {
-        console.log(`Bandeira não encontrada para: ${pais}`);
+
+        console.error(
+            `Erro ao buscar imagem para ${pais}`,
+            erro
+        );
+
     }
 }
 

@@ -162,6 +162,32 @@ app.get('/viagens', (req, res) => {
     });
 });
 
+app.get('/imagem/:pais', async (req, res) => {
+    try {
+        const pais = req.params.pais;
+
+        const resposta = await fetch(
+            `https://api.pexels.com/v1/search?query=${encodeURIComponent(pais)}&per_page=1`,
+            {
+                headers: {
+                    Authorization: process.env.PEXELS_API_KEY
+                }
+            }
+        );
+
+        const dados = await resposta.json();
+
+        res.json(dados);
+
+    } catch (erro) {
+        console.error(erro);
+
+        res.status(500).json({
+            erro: 'Erro ao buscar imagem'
+        });
+    }
+});
+
 app.delete('/viagens/:id', (req, res) => {
     const { id } = req.params;
     

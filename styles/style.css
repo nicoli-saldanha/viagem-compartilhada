@@ -122,16 +122,19 @@ main h1 {
     font-size: 16px;
 }
 
-.pais-bandeira {
-    display: flex; 
-    justify-content: space-between; 
+.cabecalho-card {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 20px;
 }
 
-.bandeira {
-    height: 40px; 
-    border-radius: 4px; 
-    display: none;
+.foto-pais {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
 
 .excluir {
