@@ -17,5 +17,3 @@ Uma aplicação web para registro de experiências em viagem. O projeto permite 
 ### Pexels API
 Empregada para obter imagens dos destinos cadastrados.
 Documentação: https://www.pexels.com/api/.
-
----
