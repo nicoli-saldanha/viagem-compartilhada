@@ -1,10 +1,18 @@
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
+const fs = require('fs');
 const session = require('express-session'); 
 
 const app = express();
 const port = 3000;
+
+const paises = JSON.parse(
+    fs.readFileSync(
+        path.join(__dirname, '..', 'paises.json'),
+        'utf8'
+    )
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..')));
@@ -39,6 +47,30 @@ app.get('/', (req, res) => {
 app.post('/passo1', (req, res) => {
     const inputInicio = req.body.inicio;
     const inputFinal = req.body.final;
+    const local = req.body.local;
+
+    const paisDigitado = local.split(',')[0].trim();
+
+    const normalizar = texto =>
+        texto
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+
+    const paisValido = paises.some(
+        pais =>
+            normalizar(pais.nome_pais) ===
+            normalizar(paisDigitado)
+    );
+
+    if (!paisValido) {
+        return res.send(`
+            <script>
+                alert('O país inserido é inválido!');
+                window.history.back();
+            </script>
+        `);
+    }
 
     if (inputFinal < inputInicio) {
         return res.send(`
